@@ -1,27 +1,65 @@
+var Links = {
+  setColor : function(color) {
+    var alist = document.querySelectorAll('a');
+     var i = 0;
+     while (i < alist.length) {
+       alist[i].style.color = color;
+       i = i + 1;
+     }
+  }
+};
+var Body = {
+  setColor : function (color){
+    document.querySelector('body').style.color = color;
+  },
+  setBGcolor : function (color){
+    document.querySelector('body').style.backgroundColor = color;
+    }
+  }
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+//function linkssetColor(color) {
+   //var alist = document.querySelectorAll('a');
+    //var i = 0;
+  //  while (i < alist.length) {
+    //  alist[i].style.color = color;
+    //  i = i + 1;
+    //}
+//  }
+
+  //function  bodysetcolor (color){
+  //  document.querySelector('body').style.color = color;
+//  }
+
+//function bodysetbgcolor(color){
+  //document.querySelector('body').style.color = color;
+//}
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 function nightDayHandler(self){
-  var target = document.querySelector('body');
+  //var target = document.querySelector('body');
 
   if(self.value == 'night'){
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    self.value = 'day';
+  Body.setBGcolor('black');
+    //bodysetbgcolor('black');
+  //  target.style.backgroundColor = 'black';
+  Body.setColor('white');
+  //bodysetcolor('white');
+  //  target.style.color = 'white';
+  Links.setColor('powderblue');
+  //  linkssetcolor('powderblue');
+   self.value = 'day';
 
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while (i < alist.length) {
-      alist[i].style.color = 'powderblue';
-      i = i + 1;
-    }    
-  } else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
+//setcolor('powderblue')
+
+  }
+  else {
+    Body.setBGcolor('white');
+    //target.style.backgroundColor = 'white';
+    Body.setColor('black');
+    //target.style.color = 'black';
+    Links.setColor('blue');
     self.value = 'night';
+    //self.value = 'night';
 
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while (i < alist.length) {
-      alist[i].style.color = 'blue';
-      i = i + 1;
-    }  
-  } 
+    //setColor('blue')
+  }
 }
